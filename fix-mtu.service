@@ -1,0 +1,14 @@
+[Unit]
+Description=Fix MTU for PPP0
+After=network.target
+Wants=network.target
+
+[Service]
+ExecStart=/bin/bash /data/fix-mtu/monitor-mtu.sh
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
