@@ -64,13 +64,11 @@ fi
 
 # 2. Extract
 log_info "Extracting..."
-tar -xzf "$TAR_FILE" -C "$TEMP_DIR"
+tar -xzf "$TAR_FILE" --strip-components=1 -C "$TEMP_DIR"
 if [ $? -ne 0 ]; then
     log_error "Extraction failed."
     exit 1
 fi
-
-EXTRACTED_DIR=$(ls -d "$TEMP_DIR"/*/ | head -n 1)
 
 # 3. Install Files
 log_info "Installing to $INSTALL_DIR..."
@@ -87,9 +85,9 @@ if [[ -f "$OLD_SCRIPT" && ! -f "$CONF_FILE" ]]; then
     mv "$OLD_SCRIPT" "$OLD_SCRIPT.old"
 fi
 
-cp "${EXTRACTED_DIR}"/*.{sh,service} "${INSTALL_DIR}/"
+cp "${TEMP_DIR}"/*.{sh,service} "${INSTALL_DIR}/"
 if ! [ -f ${CONF_FILE} ]; then
-  cp "${EXTRACTED_DIR}/*.conf" "${INSTALL_DIR}/"
+  cp "${TEMP_DIR}/*.conf" "${INSTALL_DIR}/"
   echo ""
   echo "IMPORTANT:"
   echo "Configuration is now stored in $CONF_FILE."
