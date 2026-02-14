@@ -87,7 +87,7 @@ fi
 
 cp "${TEMP_DIR}"/*.{sh,service} "${INSTALL_DIR}/"
 if ! [ -f ${CONF_FILE} ]; then
-  cp "${TEMP_DIR}/*.conf" "${INSTALL_DIR}/"
+  cp "${TEMP_DIR}"/*.conf "${INSTALL_DIR}/"
   echo ""
   echo "IMPORTANT:"
   echo "Configuration is now stored in $CONF_FILE."
