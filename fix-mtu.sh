@@ -25,8 +25,8 @@ if [ "$INTERFACE_MTU" -ne $MTU ]; then
     ip link set dev ${WAN_INTERFACE}.${VLAN_ID} mtu $(( MTU + 8 ))
   fi
   # This might not even be needed?
-  # ifconfig ${WAN_INTERFACE} down
-  # ifconfig ${WAN_INTERFACE} up
+  ifconfig ${WAN_INTERFACE} down
+  ifconfig ${WAN_INTERFACE} up
   killall pppd
   sleep 1
   killall -HUP dnscrypt-proxy dnsmasq
