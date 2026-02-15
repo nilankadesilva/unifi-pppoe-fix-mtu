@@ -1,6 +1,6 @@
 # Unifi (Cloud) Gateways PPPoE MTU Fix
 
-This repository contains a set of scripts to enable full RFC4638 support (1500 byte MTU) on Ubiquiti Unifi (Cloud) Gateways running UnifiOS (such as UDM Pro, UDM SE, UDW, UDR, UXG, etc.) when using PPPoE connections.
+This repository contains a set of scripts to enable full RFC4638 support (1500 byte MTU) on Ubiquiti Unifi (Cloud) Gateways running UnifiOS (such as UDM Pro, UDM SE, UCGF, UXG, etc.) when using PPPoE connections.
 
 By default, Unifi OS often limits PPPoE connections to an MTU of 1492. This script forces the correct interface settings to allow a full 1500 byte payload, improving network performance and reducing fragmentation.
 
