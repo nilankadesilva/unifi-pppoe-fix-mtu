@@ -6,7 +6,7 @@ By default, Unifi OS often limits PPPoE connections to an MTU of 1492. This scri
 
 ## Prerequisites
 
-*   Unifi Gateway running UnifiOS (UDM Pro/SE, UDW, UDR, etc.).
+*   Unifi Gateway running UnifiOS (UDM Pro/SE, UCGF, UXG, etc.).
 *   SSH access enabled on the device.
 *   A PPPoE internet connection (optionally on a VLAN).
 
