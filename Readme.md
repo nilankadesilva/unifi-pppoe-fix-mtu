@@ -61,8 +61,8 @@ If you prefer to install manually:
     Content:
     ```bash
     PPP_INTERFACE=ppp0
-    WAN_INTERFACE=eth8
-    VLAN_ID=35
+    WAN_INTERFACE=eth4
+    VLAN_ID=6
     MTU=1500
     ```
     Adjust the values to match your setup.
