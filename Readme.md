@@ -25,7 +25,7 @@ curl -sL https://raw.githubusercontent.com/nilankadesilva/unifi-pppoe-fix-mtu/ma
     ```bash
     nano /data/fix-mtu/fix-mtu.conf
     ```
-    *   Update `WAN_INTERFACE` (e.g., `eth8` or `eth4`) and `VLAN_ID` (e.g., `35`) if needed.
+    *   Update `WAN_INTERFACE` (e.g. `eth4`) and `VLAN_ID` (e.g., `6`) if needed.
     *   `PPP_INTERFACE` defaults to `ppp0`.
 2.  Restart the service to apply changes:
     ```bash
