@@ -25,7 +25,7 @@ curl -sL https://raw.githubusercontent.com/nilankadesilva/unifi-pppoe-fix-mtu/ma
     ```bash
     nano /data/fix-mtu/fix-mtu.conf
     ```
-    *   Update `WAN_INTERFACE` (e.g. `eth4`) and `VLAN_ID` (e.g., `6`) if needed.
+    *   Update `WAN_INTERFACE` (e.g. `eth4`) and `VLAN_ID` (e.g. `6`) if needed.
     *   `PPP_INTERFACE` defaults to `ppp0`.
 2.  Restart the service to apply changes:
     ```bash
@@ -102,8 +102,8 @@ To achieve a full 1500-byte IP payload:
 
 You might encounter configurations suggesting the parent interface should be set to **1512** to account for the 4-byte VLAN tag (1508 + 4). However, in the context of the Linux kernel network stack on these devices, this is incorrect.
 
-*   **VLAN Interface (e.g., `eth8.35`):** Must be set to **1508** to accept the full PPPoE frame.
-*   **Parent Interface (e.g., `eth8`):** Must also be set to **1508**, NOT 1512.
+*   **VLAN Interface (e.g. `eth4.6`):** Must be set to **1508** to accept the full PPPoE frame.
+*   **Parent Interface (e.g. `eth4`):** Must also be set to **1508**, NOT 1512.
 
 The interface MTU setting defines the maximum size of the *payload* the interface executes on. When the VLAN interface passes the 1508-byte payload to the parent interface, the parent interface validates that the packet size does not exceed its own MTU. The 4-byte VLAN tag is added by the hardware offloading or driver logic at a layer that typically does not count towards the logical Interface MTU limit for the payload itself.
 
