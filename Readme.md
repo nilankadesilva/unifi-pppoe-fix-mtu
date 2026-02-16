@@ -17,7 +17,7 @@ By default, Unifi OS often limits PPPoE connections to an MTU of 1492. This scri
 Run the following command on your Unifi Gateway to download and install the scripts automatically:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/nilankadesilva/unifi-pppoe-fix-mtu/refs/heads/master/install.sh | bash
+curl -sL https://raw.githubusercontent.com/nilankadesilva/unifi-pppoe-fix-mtu/master/install.sh | bash
 ```
 
 **After installation:**
@@ -63,7 +63,6 @@ If you prefer to install manually:
     PPP_INTERFACE=ppp0
     WAN_INTERFACE=eth8
     VLAN_ID=35
-    VLAN_INTERFACE=${WAN_INTERFACE}.${VLAN_ID}
     MTU=1500
     ```
     Adjust the values to match your setup.
